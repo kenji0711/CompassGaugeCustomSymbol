@@ -18,7 +18,9 @@
         function resize(width, height) {
             scope.width = width;
             scope.height = height;
-            document.gauges[0].update({ width: scope.width, height: scope.height });
+            document.gauges.forEach(function(gauge) {
+                gauge.update({ width: scope.width, height: scope.height });
+            });
         }
     }
     var definition = {
