@@ -2,7 +2,7 @@
     <span style="color:#fff; margin-left:15px">Text Color</span>
 </div>
 <div class="config-option-format">
-    <cs-color-picker id="textcolor" ng-model="config.TextColor"></cs-color-picker>
+    <pv-color-picker colorkeyword="Text" ng-model="config.TextColor"></pv-color-picker>
 </div>
 <div class="c-side-pane t-toolbar">
     <span style="color:#fff; margin-left:15px">Show Options</span>
@@ -12,4 +12,7 @@
 </div>
 <div class="c-config-content">Show Time:
     <input type="checkbox" ng-model="config.ShowTime">
+</div>
+<div class="c-config-content">Show Value:
+    <input type="checkbox" ng-model="config.ShowValue">
 </div>

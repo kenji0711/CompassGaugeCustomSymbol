@@ -2,6 +2,8 @@
     function symbolVis() { }
     CS.deriveVisualizationFromBase(symbolVis);
 	symbolVis.prototype.init = function (scope) {
+        
+        scope.gaugeNumb = document.gauges.length - 1;
         this.onDataUpdate = dataUpdate;
         this.onResize = resize;
         
@@ -18,9 +20,7 @@
         function resize(width, height) {
             scope.width = width;
             scope.height = height;
-            document.gauges.forEach(function(gauge) {
-                gauge.update({ width: scope.width, height: scope.height });
-            });
+            document.gauges[scope.gaugeNumb].update({ width: scope.width, height: scope.height });
         }
     }
     var definition = {
@@ -34,11 +34,12 @@
     	        Height: 300,
                 Width: 200,
                 TextColor: 'rgb(255,255,255)',
-                ShowLabel: false,
-                ShowTime : false
+                ShowLabel: true,
+                ShowTime : false,
+                ShowValue : false
             };
         },
         configTitle: 'Format Symbol'
     };
     CS.symbolCatalog.register(definition);
-})(window.Coresight);
+})(window.PIVisualization);
